@@ -94,35 +94,26 @@ public class AlunoDAO implements IAlunoDAO {
 
 
 	@Override
-	public void findAll(Aluno aluno) {
+	public void findAll(Aluno aluno) throws SQLException {
 		// TODO Auto-generated method stub
 		
 		Connection connection = ConnectionFactory.createConnection();
 		String selectFrom = "SELECT * FROM aluno";
 		PreparedStatement psmt = null;
 		
-		try {
+
 			
 			psmt = connection.prepareStatement(selectFrom);
 			ResultSet result = psmt.executeQuery();
 			
-			while(result.next()){
-				
 				while(result.next()) {
-					System.out.println("Id: " + result.getInt("id_aluno") + "| Nome: " + result.getString("nome"));
+					String nome = result.getString("nome");
+					int idade = result.getInt("idade");
+					double nota = result.getDouble("nota");
+					System.out.println("Id: " + result.getInt("id_aluno") + "| Nome: " + nome + "| Idade: " + idade + "| Nota média: " + nota + "\n");
 				}
 				psmt.close();
-				
-				
-			}
-		
-		} catch (SQLException e) {
-			
-			e.printStackTrace();
-			System.out.println("Erro ao se conectar");
-		}	
-		
-		
+	
 	}
 
 	@Override

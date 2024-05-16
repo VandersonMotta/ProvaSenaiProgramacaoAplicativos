@@ -1,5 +1,6 @@
 package ProjetoDao;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 import SenaiProva.Aluno;
@@ -8,7 +9,7 @@ import SenaiProva.Turma;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		
 		
 		AlunoDAO dao = new AlunoDAO();
@@ -23,12 +24,13 @@ public class Main {
 		do {
 			
 			System.out.println("-----ALUNOS-------\n\n"
-					+ "1-  create\n"
-					+ "2 - buscar pelo id\n"
+					+ "1-  Cadastrar novo aluno\n"
+					+ "2 - buscar pelo id do aluno\n"
 					+ "3 - buscar pelo nome\n"
-					+ "4 - deletar\n"
-					+ "5 - update\n"
-					+ "6 - sair");
+					+ "4 - Selecionar todos"
+					+ "5 - deletar\n"
+					+ "6 - update\n"
+					+ "7 - sair");
 			opcao = scanner.nextInt();
 			
 			switch(opcao) {
@@ -53,9 +55,15 @@ public class Main {
 					aluno = dao.findById(2);
 					break;
 					
+				case 4 :
+					dao.findAll(aluno);
+					break;
+					
+					
+					
 			}
 			
-		} while(opcao !=6);
+		} while(opcao !=7);
 		
 		
 		
