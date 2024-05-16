@@ -9,7 +9,7 @@ import SenaiProva.ConnectionFactory;
 import SenaiProva.Professor;
 import SenaiProva.Turma;
 
-public class TurmaDao {
+public class TurmaDAO {
 	
 		public void cadastrarTurma(Turma turma) {
 			

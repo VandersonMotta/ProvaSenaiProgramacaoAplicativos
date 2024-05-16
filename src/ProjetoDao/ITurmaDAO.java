@@ -4,7 +4,7 @@ import SenaiProva.Aluno;
 import SenaiProva.Professor;
 import SenaiProva.Turma;
 
-public interface IturmaDAO {
+public interface ITurmaDAO {
 	
 	Aluno findById(int id_turma);
 	void  findAll(Turma turma);

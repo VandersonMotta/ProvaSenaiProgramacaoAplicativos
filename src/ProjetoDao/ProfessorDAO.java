@@ -9,7 +9,7 @@ import SenaiProva.Aluno;
 import SenaiProva.ConnectionFactory;
 import SenaiProva.Professor;
 
-public class ProfessorDao implements IProfessorDAO {
+public class ProfessorDAO implements IProfessorDAO {
 		
 		@Override
 		public Aluno findById(int idprofessor) {

@@ -27,7 +27,8 @@ public class Main {
 					+ "2 - buscar pelo id\n"
 					+ "3 - buscar pelo nome\n"
 					+ "4 - deletar\n"
-					+ "5 - update\n");
+					+ "5 - update\n"
+					+ "6 - sair");
 			opcao = scanner.nextInt();
 			
 			switch(opcao) {
@@ -50,10 +51,11 @@ public class Main {
 					
 				case 2 :
 					aluno = dao.findById(2);
+					break;
 					
 			}
 			
-		} while(opcao !=5);
+		} while(opcao !=6);
 		
 		
 		
