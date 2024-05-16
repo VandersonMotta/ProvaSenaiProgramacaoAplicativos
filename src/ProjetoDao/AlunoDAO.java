@@ -9,7 +9,7 @@ import java.util.List;
 import SenaiProva.Aluno;
 import SenaiProva.ConnectionFactory;
 
-public class AlunoDao implements IAlunoDAO {
+public class AlunoDAO implements IAlunoDAO {
 
 	
 	public Aluno findById(int id_aluno) {
@@ -30,6 +30,7 @@ public class AlunoDao implements IAlunoDAO {
 				int idade = result.getInt("idade");
 				double nota = result.getDouble("nota");
 				Aluno aluno = new Aluno(nome, idade, nota);
+				System.out.println("Id: " + result.getInt("id_aluno") + "| Nome: " + nome + "| Idade: " + idade + "| Nota média: " + nota);
 				return aluno;
 			}
 		
