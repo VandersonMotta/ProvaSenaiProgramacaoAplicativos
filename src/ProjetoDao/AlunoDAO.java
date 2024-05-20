@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Scanner;
 
 import SenaiProva.Aluno;
 import SenaiProva.ConnectionFactory;
@@ -75,6 +76,11 @@ public class AlunoDAO implements IAlunoDAO {
 	@Override
 	public void delete(Aluno aluno) {
 		
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Digite o valor do id que deseja deletar: ");
+		int opcaoId = scanner.nextInt();
+		
 		Connection connection = ConnectionFactory.createConnection();
 		String deleteFrom = "DELETE FROM aluno WHERE id_aluno = ?";
 		
@@ -83,7 +89,8 @@ public class AlunoDAO implements IAlunoDAO {
 		try {
 			
 			psmt = connection.prepareStatement(deleteFrom);
-			ResultSet result = psmt.executeQuery();
+			psmt.setInt(1, opcaoId);
+			psmt.execute();
 		} catch (SQLException e) {
 			
 			e.printStackTrace();

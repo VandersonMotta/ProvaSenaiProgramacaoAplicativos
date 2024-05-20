@@ -26,11 +26,10 @@ public class Main {
 			System.out.println("-----ALUNOS-------\n\n"
 					+ "1-  Cadastrar novo aluno\n"
 					+ "2 - buscar pelo id do aluno\n"
-					+ "3 - buscar pelo nome\n"
-					+ "4 - Selecionar todos"
-					+ "5 - deletar\n"
-					+ "6 - update\n"
-					+ "7 - sair");
+					+ "3 - Selecionar todos\n"
+					+ "4 - deletar\n"
+					+ "5 - update\n"
+					+ "6 - sair");
 			opcao = scanner.nextInt();
 			
 			switch(opcao) {
@@ -55,15 +54,23 @@ public class Main {
 					aluno = dao.findById(2);
 					break;
 					
-				case 4 :
+				case 3 :
 					dao.findAll(aluno);
+					break;
+					
+				case 4 :
+					dao.delete(aluno);
+					break;
+					
+				case 5 :
+					dao.update(aluno);
 					break;
 					
 					
 					
 			}
 			
-		} while(opcao !=7);
+		} while(opcao !=6);
 		
 		
 		
